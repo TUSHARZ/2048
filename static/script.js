@@ -13,41 +13,57 @@ function startthis(){
 
 	var randi= Math.floor(Math.random()*(2-0+1)+0);
 		var randj= Math.floor(Math.random()*(2-0+1)+0);
-
-
-	 var tr=v.rows[getrandom()].cells[getrandom()].innerHTML = "2"
-     var td=v.rows[getrandom()].cells[getrandom()].innerHTML = "4"
-	// for(var i=0;i<3;i++){
-	// 	for(var j=0;j<3;j++){
-	// 		 v.rows[i].cells[j].innerHTML = i.toString() + j.toString();
+	for(var i=0;i<3;i++){
+		for(var j=0;j<3;j++){
+			 v.rows[i].cells[j].innerHTML = "\n";
 			
-	// 	}
-	// }
+		}
+	}
 
-	document.addEventListener('keypress', makemove(i,j));
+	 var tr=v.rows[getrandom()].cells[getrandom()];
+     var td=v.rows[getrandom()].cells[getrandom()];
+
+    
+	document.addEventListener("keydown", function(){
+		makemove(randi,randj);
+	});
 
 
 
 
 }
 
-var makemove=function(i,j){
+var print = function(){
+	console.log("Its printed");
+}
+
+var makemove = function(i,j){
+
+	console.log(event)
+	
 var v = document.querySelector("#table");
-if(event ==keypress down){
-	while(i!=0)
-	if(this.innerHTML == v.rows[i--][j]){
+
+if(event.keyCode === 40){
+	console.log("in down");
+	while(i!=2){
+		if(v.rows[i][j].innerHTML != "\n"){
+	if(this.innerHTML == v.rows[i++][j].innerHTML){
 		this.innerHTML = this.innerHTML + v.rows[i][j];
+		i++;
 
 	}
 	else{
-		v.rows[0][j]=this.innerHTML;
+		v.rows[i][j]=this.innerHTML;
 
-	}
+	}}
 
+}
+	
 
 }
 
-if(event == keypress_up){
+if(event.keycode == 38){
+	console.log("in down");
 	while(i!=3){
 		if(this.innerHTML == v.rows[i++][j]){
 		this.innerHTML = this.innerHTML + v.rows[i][j];
@@ -64,7 +80,8 @@ if(event == keypress_up){
 
 }
 
-if(event == keypress_right){
+if(event.keycode == 39){
+	console.log("in down");
 	while(j!=3){
 		if(this.innerHTML == v.rows[i][j++]){
 		this.innerHTML = this.innerHTML + v.rows[i][j];
@@ -82,7 +99,8 @@ if(event == keypress_right){
 }
 
 
-if(event == keypress_left){
+if(event.keycode == 37){
+	console.log("in down");
 	while(j!=0){
 		if(this.innerHTML == v.rows[i][j--]){
 		this.innerHTML = this.innerHTML + v.rows[i][j];
@@ -97,7 +115,7 @@ if(event == keypress_left){
 	}
 
 
-}
+}}
 
 
 window.addEventListener('load' , startthis);
