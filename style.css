@@ -1,12 +1,28 @@
 #table td{
-	height: 30px;
-	width: 30px;
-	border: 2px solid black;
-	padding: 0px;
-	margin: 0px;
+	height: 90px;
+	width: 90px;
+    font-size:40px;
+    text-align: center;
+	padding: 10px;
+	border: 9px solid grey;
+	
+
 }
 
 #table tr {
 	margin: 0px;
-	padding: 0px;
+	padding: 10px;
+	font-size:40px;
+    text-align: center;
+	border: 9px solid grey;
+	
 }
+
+#table {
+	border-collapse: collapse;
+	
+	font: 20px;
+	background: gainsboro;
+}
+
+
