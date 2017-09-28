@@ -3,6 +3,7 @@ var getrandom = function()
 	return Math.floor(Math.random()*(2-0+1)+0);
 }
 var assign = function(){
+	gameover();
 		var v = document.querySelector("#table");
 	var randii=getrandom();
 var randjj=getrandom();
@@ -15,8 +16,9 @@ else{
 }
 	for(var i=0 ; i<=2 ; i++){
 		for(var j=0 ; j<=2 ; j++){
-
+			
 			if(v.rows[i].cells[j].innerHTML!=" "){
+
                  var mycolor=v.rows[i].cells[j].innerHTML;
                  switch(mycolor){
                  case "2": v.rows[i].cells[j].style.backgroundColor="#EEE4DA";
@@ -32,7 +34,7 @@ else{
                  case "64":v.rows[i].cells[j].style.backgroundColor="#F65E3B"
                  break
                  default:
-                 v.rows[i].cells[j].style.backgroundColor="CDC1B4"
+                 v.rows[i].cells[j].style.backgroundColor="#CDC1B4"
                  
 
 
@@ -53,6 +55,7 @@ else{
 }
 var randi;
 var randj;
+var k=0;
 function startthis(){
 	var v = document.querySelector("#table");
 
@@ -68,9 +71,9 @@ function startthis(){
 	}
 
 	 var tr=v.rows[randi].cells[randj].innerHTML="2";
-	 v.rows[randi].cells[randj].style.backgroundColor="#ffffff";
+	 v.rows[randi].cells[randj].style.backgroundColor="#EEE4DA";
      var td=v.rows[randi2].cells[randj2].innerHTML="4";
-     v.rows[randi2].cells[randj2].style.backgroundColor="#ffffff";
+     v.rows[randi2].cells[randj2].style.backgroundColor="#EDE0C8";
 
     
 	document.addEventListener("keydown", function(){
@@ -276,10 +279,28 @@ var moveleft = function(i , j , v){
 		v.rows[i].cells[j-1].innerHTML=v.rows[i].cells[j].innerHTML ;
 		v.rows[i].cells[j].innerHTML=" ";
 	console.log("replaced");}
+
 	j--;
 }
 
 
+}
+
+var gameover=function(){
+	var v = document.querySelector("#table");
+	for(var i=0 ; i<2 ; i++){
+       for(var j =0 ; j<2 ; j++){
+       	if(v.rows[i].cells[j].innerHTML!=v.rows[i+1].cells[j].innerHTML && v.rows[i].cells[j].innerHTML!=v.rows[i].cells[j+1].innerHTML
+		&& v.rows[i+1].cells[j].innerHTML!=" " && v.rows[i].cells[j+1].innerHTML!=" "){
+		k=k+1;
+	}
+       }
+
+	}
+	if(k==9){
+		console.log("GAME OVER");
+	}
+	
 }
 
 

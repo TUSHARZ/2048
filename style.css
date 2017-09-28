@@ -19,10 +19,11 @@
 }
 
 #table {
-	border-collapse: collapse;
+	
 	
 	font: 20px;
-	background: gainsboro;
+	background: #CDC1B4;
 }
-
-
+#first{
+border-top-left-radius: 10px;
+}
