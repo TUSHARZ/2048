@@ -1,10 +1,10 @@
 #table td{
-	height: 90px;
-	width: 90px;
+	height: 150px;
+	width: 150px;
     font-size:40px;
     text-align: center;
 	padding: 10px;
-	border: 9px solid grey;
+	border: 8px solid grey;
 	
 
 }
@@ -14,16 +14,26 @@
 	padding: 10px;
 	font-size:40px;
     text-align: center;
-	border: 9px solid grey;
+	border: 8px solid grey;
 	
 }
 
 #table {
 	
-	
+	border-radius: 20px;
 	font: 20px;
 	background: #CDC1B4;
 }
 #first{
 border-top-left-radius: 10px;
+}
+
+#back{
+	    width: 200px;
+    height: 100px;
+    margin: 10;
+    text-align: center;
+    border-radius: 10px;
+        border: 5px solid grey;
+        background: #BBADA0
 }

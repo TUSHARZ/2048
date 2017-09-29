@@ -58,6 +58,8 @@ var randj;
 
 function startthis(){
 	var v = document.querySelector("#table");
+	var s = document.querySelector("#score");
+	s.innerHTML=0;
 
 	var randi= getrandom();
 		randj= getrandom();
@@ -91,7 +93,7 @@ var print = function(){
 
 var makemove = function(i,j){
 	var v = document.querySelector("#table");
-	
+	var s = document.querySelector("#score");
 
 
 	console.log(event)
@@ -110,7 +112,7 @@ for(var l=2 ; l>=0 ; l--){  //Just did some work with replacing random variable 
 		if(v.rows[l].cells[k].innerHTML!=" "){
          
         
-		movedown(l,k,v);
+		movedown(l,k,v,s);
 		
 
 
@@ -132,7 +134,7 @@ for(var l=0 ; l<=2 ; l++){  //Just did some work with replacing random variable 
          console.log("here l" , l);
          console.log("here k" , k);
 
-		moveup(l,k,v);
+		moveup(l,k,v,s);
 
 
 	}}
@@ -154,7 +156,7 @@ if(event.keyCode == 39){
 		if(v.rows[l].cells[k].innerHTML!=" "){
          
 
-		moveright(l,k,v);
+		moveright(l,k,v,s);
 
 
 	}}
@@ -174,7 +176,7 @@ if(event.keyCode == 37){
 		if(v.rows[l].cells[k].innerHTML!=" "){
          
 
-		moveleft(l,k,v);
+		moveleft(l,k,v,s);
 
 
 	}}
@@ -188,7 +190,7 @@ assign(v);
 
 }}
 
-var movedown=function(i,j,v){
+var movedown=function(i,j,v,s){
 	while(i!=2){
 		console.log("I" , i);
 		console.log("J", j);
@@ -197,6 +199,7 @@ var movedown=function(i,j,v){
 		console.log("in if");
 		v.rows[i+1].cells[j].innerHTML  = parseInt(v.rows[i].cells[j].innerHTML)  + parseInt(v.rows[i+1].cells[j].innerHTML);
 		v.rows[i].cells[j].innerHTML=" ";
+		s.innerHTML=parseInt(s.innerHTML) + Number(v.rows[i+1].cells[j].innerHTML) ;
 		break;
 		console.log("moved");
 
@@ -213,7 +216,7 @@ var movedown=function(i,j,v){
 }
 }
 
-var moveup = function(i , j, v){
+var moveup = function(i , j, v,s){
 while(i!=0){
 		console.log("I" , i);
 		
@@ -221,6 +224,7 @@ while(i!=0){
 		console.log("in if");
 		v.rows[i-1].cells[j].innerHTML  = parseInt(v.rows[i].cells[j].innerHTML)  + parseInt(v.rows[i-1].cells[j].innerHTML);
 		v.rows[i].cells[j].innerHTML=" ";
+		s.innerHTML=parseInt(s.innerHTML) + Number(v.rows[i-1].cells[j].innerHTML);
 		break;
 		console.log("moved");
 
@@ -245,7 +249,7 @@ while(i!=0){
 
 }
 
-var moveright = function(i ,j,v){
+var moveright = function(i ,j,v,s){
 	while(j!=2){
 		console.log("I" , i);
 		
@@ -253,6 +257,7 @@ var moveright = function(i ,j,v){
 		console.log("in if");
 		v.rows[i].cells[j+1].innerHTML  = parseInt(v.rows[i].cells[j].innerHTML)  + parseInt(v.rows[i].cells[j+1].innerHTML);
 		v.rows[i].cells[j].innerHTML=" ";
+		s.innerHTML=parseInt(s.innerHTML) + Number(v.rows[i].cells[j+1].innerHTML);
 		break;
 		console.log("moved");
 
@@ -266,7 +271,7 @@ var moveright = function(i ,j,v){
 
 }
 
-var moveleft = function(i , j , v){
+var moveleft = function(i , j , v,s){
 	while(j!=0){
 		console.log("I" , i);
 		
@@ -274,6 +279,7 @@ var moveleft = function(i , j , v){
 		console.log("in if");
 		v.rows[i].cells[j-1].innerHTML  = parseInt(v.rows[i].cells[j].innerHTML)  + parseInt(v.rows[i].cells[j-1].innerHTML);
 		v.rows[i].cells[j].innerHTML=" ";
+		s.innerHTML=parseInt(s.innerHTML) + Number(v.rows[i].cells[j-1].innerHTML);
 		break;
 		console.log("moved");
 
