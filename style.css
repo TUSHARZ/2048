@@ -46,3 +46,15 @@ border-top-left-radius: 10px;
         border: 5px solid grey;
         background: #BBADA0
 }
+
+#keys .k{
+	height: 50px;
+	
+    font-size:30px;
+    text-align: center;
+	padding: 10px;
+	border: 8px solid grey;
+
+
+}
+
