@@ -1,6 +1,6 @@
 var getrandom = function()
 {
-	return Math.floor(Math.random()*(2-0+1)+0);
+	return Math.floor(Math.random()*(3-0+1)+0);
 }
 var assign = function(){
 	
@@ -14,8 +14,8 @@ else{
 	assign();
 
 }
-	for(var i=0 ; i<=2 ; i++){
-		for(var j=0 ; j<=2 ; j++){
+	for(var i=0 ; i<=3 ; i++){
+		for(var j=0 ; j<=3 ; j++){
 			
 			if(v.rows[i].cells[j].innerHTML!=" "){
 
@@ -53,20 +53,36 @@ else{
 	
 
 }
-var randi;
-var randj;
+var newg=function(){
+	console.log("in");
+	window.location.reload(false);
+}
+
+var seperate = function(i){
+	myrand=getrandom();
+	if(myrand==i){
+		seperate();
+		
+
+	}
+	console.log("myrand = ",myrand );
+	console.log("given = ",i );
+	return myrand;
+}
+
 
 function startthis(){
 	var v = document.querySelector("#table");
 	var s = document.querySelector("#score");
+	var r = document.querySelector('#reload');
 	s.innerHTML=0;
 
 	var randi= getrandom();
-		randj= getrandom();
-		randi2= getrandom();
-		var randj2= getrandom();
-	for(var i=0;i<3;i++){
-		for(var j=0;j<3;j++){
+	var randj= getrandom();
+	var randi2= seperate(randi);
+	var randj2= seperate(randj);
+	for(var i=0;i<=3;i++){
+		for(var j=0;j<=3;j++){
 			 v.rows[i].cells[j].innerHTML = " ";
 			
 		}
@@ -77,7 +93,7 @@ function startthis(){
      var td=v.rows[randi2].cells[randj2].innerHTML="4";
      v.rows[randi2].cells[randj2].style.backgroundColor="#EDE0C8";
 
-    
+    r.addEventListener('click' ,newg);
 	document.addEventListener("keydown", function(){
 		makemove(randi,randj);
 	});
@@ -107,8 +123,8 @@ if(event.keyCode === 40){
 console.log(v.rows[i].cells[j].innerHTML);
 console.log("this, innerHTML = ", this.innerHTML);
 
-for(var l=2 ; l>=0 ; l--){  //Just did some work with replacing random variable on only a blank space and down is almost complete..
-	for(var k=2 ; k>=0 ; k--){
+for(var l=3 ; l>=0 ; l--){  //Just did some work with replacing random variable on only a blank space and down is almost complete..
+	for(var k=3 ; k>=0 ; k--){
 		if(v.rows[l].cells[k].innerHTML!=" "){
          
         
@@ -121,14 +137,13 @@ for(var l=2 ; l>=0 ; l--){  //Just did some work with replacing random variable 
 }
 
 
-gameover();
 assign(v);
  }
 
 if(event.keyCode == 38){
 	console.log("in up");
-for(var l=0 ; l<=2 ; l++){  //Just did some work with replacing random variable on only a blank space and down is almost complete..
-	for(var k=0 ; k<=2 ; k++){
+for(var l=0 ; l<=3 ; l++){  //Just did some work with replacing random variable on only a blank space and down is almost complete..
+	for(var k=0 ; k<=3 ; k++){
 		if(v.rows[l].cells[k].innerHTML!=" "){
          console.log("CALLED IT ");
          console.log("here l" , l);
@@ -140,7 +155,7 @@ for(var l=0 ; l<=2 ; l++){  //Just did some work with replacing random variable 
 	}}
 
 }
-gameover();
+
 assign(v);
 
 
@@ -151,8 +166,8 @@ assign(v);
 
 if(event.keyCode == 39){
 	console.log("in right");
-	for(var l=2 ; l>=0 ; l--){  //Just did some work with replacing random variable on only a blank space and down is almost complete..
-	for(var k=2 ; k>=0 ; k--){
+	for(var l=3 ; l>=0 ; l--){  //Just did some work with replacing random variable on only a blank space and down is almost complete..
+	for(var k=3 ; k>=0 ; k--){
 		if(v.rows[l].cells[k].innerHTML!=" "){
          
 
@@ -162,7 +177,7 @@ if(event.keyCode == 39){
 	}}
 
 }
-gameover();
+
 assign(v);
 
 
@@ -171,8 +186,8 @@ assign(v);
 
 if(event.keyCode == 37){
 	console.log("in left");
-	for(var l=0 ; l<=2 ; l++){  //Just did some work with replacing random variable on only a blank space and down is almost complete..
-	for(var k=0 ; k<=2 ; k++){
+	for(var l=0 ; l<=3 ; l++){  //Just did some work with replacing random variable on only a blank space and down is almost complete..
+	for(var k=0 ; k<=3 ; k++){
 		if(v.rows[l].cells[k].innerHTML!=" "){
          
 
@@ -182,7 +197,7 @@ if(event.keyCode == 37){
 	}}
 
 }
-gameover();
+
 assign(v);
 
 
@@ -191,7 +206,7 @@ assign(v);
 }}
 
 var movedown=function(i,j,v,s){
-	while(i!=2){
+	while(i!=3){
 		console.log("I" , i);
 		console.log("J", j);
 		
@@ -250,7 +265,7 @@ while(i!=0){
 }
 
 var moveright = function(i ,j,v,s){
-	while(j!=2){
+	while(j!=3){
 		console.log("I" , i);
 		
 	if(v.rows[i].cells[j].innerHTML == v.rows[i].cells[j+1].innerHTML){
@@ -299,8 +314,8 @@ var gameover=function(){
 	var k = 0;
 	console.log("k = ", k);
 	var v = document.querySelector("#table");
-	for(var i=0 ; i<2 ; i++){
-       for(var j =0 ; j<2 ; j++){
+	for(var i=0 ; i<=3 ; i++){
+       for(var j =0 ; j<=3 ; j++){
        	if(v.rows[i].cells[j].innerHTML!=v.rows[i+1].cells[j].innerHTML && v.rows[i].cells[j].innerHTML!=v.rows[i].cells[j+1].innerHTML
 		&& v.rows[i+1].cells[j].innerHTML!=" " && v.rows[i].cells[j+1].innerHTML!=" "){
 		k=k+1;
