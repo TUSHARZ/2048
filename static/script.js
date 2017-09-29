@@ -2,6 +2,11 @@ var getrandom = function()
 {
 	return Math.floor(Math.random()*(3-0+1)+0);
 }
+
+
+
+
+
 var assign = function(){
 	
 		var v = document.querySelector("#table");
@@ -75,6 +80,13 @@ function startthis(){
 	var v = document.querySelector("#table");
 	var s = document.querySelector("#score");
 	var r = document.querySelector('#reload');
+	var k=document.getElementById("keys")
+	var up=k.getElementsByTagName("td")[1];
+	var left=k.getElementsByTagName("td")[3];
+	var right=k.getElementsByTagName("td")[5];
+	var down=k.getElementsByTagName("td")[7];
+
+
 	s.innerHTML=0;
 
 	var randi= getrandom();
@@ -94,6 +106,18 @@ function startthis(){
      v.rows[randi2].cells[randj2].style.backgroundColor="#EDE0C8";
 
     r.addEventListener('click' ,newg);
+    up.addEventListener('click' ,function(){
+    	makemove(randi,randj,"up")
+    });
+     down.addEventListener('click' ,function(){
+    	makemove(randi,randj,"down")
+    });
+      left.addEventListener('click' ,function(){
+    	makemove(randi,randj,"left")
+    });
+       right.addEventListener('click' ,function(){
+    	makemove(randi,randj,"right")
+    });
 	document.addEventListener("keydown", function(){
 		makemove(randi,randj);
 	});
@@ -107,7 +131,7 @@ var print = function(){
 	console.log("Its printed");
 }
 
-var makemove = function(i,j){
+var makemove = function(i,j,k){
 	var v = document.querySelector("#table");
 	var s = document.querySelector("#score");
 
@@ -116,7 +140,7 @@ var makemove = function(i,j){
 	
 
 
-if(event.keyCode === 40){
+if(event.keyCode === 40 || k==="down"){
 	console.log("in down");
 	console.log("i = ", i);
 	console.log("j = ", j);
@@ -140,7 +164,7 @@ for(var l=3 ; l>=0 ; l--){  //Just did some work with replacing random variable 
 assign(v);
  }
 
-if(event.keyCode == 38){
+if(event.keyCode == 38 || k==="up"){
 	console.log("in up");
 for(var l=0 ; l<=3 ; l++){  //Just did some work with replacing random variable on only a blank space and down is almost complete..
 	for(var k=0 ; k<=3 ; k++){
@@ -164,7 +188,7 @@ assign(v);
 
 
 
-if(event.keyCode == 39){
+if(event.keyCode == 39 || k==="right"){
 	console.log("in right");
 	for(var l=3 ; l>=0 ; l--){  //Just did some work with replacing random variable on only a blank space and down is almost complete..
 	for(var k=3 ; k>=0 ; k--){
@@ -184,7 +208,7 @@ assign(v);
 }
 
 
-if(event.keyCode == 37){
+if(event.keyCode == 37 || k==="left"){
 	console.log("in left");
 	for(var l=0 ; l<=3 ; l++){  //Just did some work with replacing random variable on only a blank space and down is almost complete..
 	for(var k=0 ; k<=3 ; k++){
@@ -329,6 +353,10 @@ var gameover=function(){
 	}
 	
 }
+
+
+
+
 
 
 
