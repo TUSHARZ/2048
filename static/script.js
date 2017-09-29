@@ -3,7 +3,7 @@ var getrandom = function()
 	return Math.floor(Math.random()*(2-0+1)+0);
 }
 var assign = function(){
-	gameover();
+	
 		var v = document.querySelector("#table");
 	var randii=getrandom();
 var randjj=getrandom();
@@ -55,7 +55,7 @@ else{
 }
 var randi;
 var randj;
-var k=0;
+
 function startthis(){
 	var v = document.querySelector("#table");
 
@@ -111,6 +111,7 @@ for(var l=2 ; l>=0 ; l--){  //Just did some work with replacing random variable 
          
         
 		movedown(l,k,v);
+		
 
 
 	}}
@@ -118,7 +119,7 @@ for(var l=2 ; l>=0 ; l--){  //Just did some work with replacing random variable 
 }
 
 
-
+gameover();
 assign(v);
  }
 
@@ -133,11 +134,13 @@ for(var l=0 ; l<=2 ; l++){  //Just did some work with replacing random variable 
 
 		moveup(l,k,v);
 
+
 	}}
 
 }
-
+gameover();
 assign(v);
+
 
 	}
 
@@ -157,7 +160,7 @@ if(event.keyCode == 39){
 	}}
 
 }
-
+gameover();
 assign(v);
 
 
@@ -177,7 +180,7 @@ if(event.keyCode == 37){
 	}}
 
 }
-
+gameover();
 assign(v);
 
 
@@ -287,17 +290,20 @@ var moveleft = function(i , j , v){
 }
 
 var gameover=function(){
+	var k = 0;
+	console.log("k = ", k);
 	var v = document.querySelector("#table");
 	for(var i=0 ; i<2 ; i++){
        for(var j =0 ; j<2 ; j++){
        	if(v.rows[i].cells[j].innerHTML!=v.rows[i+1].cells[j].innerHTML && v.rows[i].cells[j].innerHTML!=v.rows[i].cells[j+1].innerHTML
 		&& v.rows[i+1].cells[j].innerHTML!=" " && v.rows[i].cells[j+1].innerHTML!=" "){
 		k=k+1;
+	    console.log("k = ", k);
 	}
        }
 
 	}
-	if(k==9){
+	if(k==4){
 		console.log("GAME OVER");
 	}
 	
