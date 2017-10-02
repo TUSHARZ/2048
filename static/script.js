@@ -336,19 +336,19 @@ var moveleft = function(i , j , v,s){
 
 var gameover=function(){
 	var k = 0;
-	console.log("k = ", k);
+	
 	var v = document.querySelector("#table");
 	for(var i=0 ; i<=3 ; i++){
        for(var j =0 ; j<=3 ; j++){
        	if(v.rows[i].cells[j].innerHTML!=v.rows[i+1].cells[j].innerHTML && v.rows[i].cells[j].innerHTML!=v.rows[i].cells[j+1].innerHTML
-		&& v.rows[i+1].cells[j].innerHTML!=" " && v.rows[i].cells[j+1].innerHTML!=" "){
+		&& v.rows[i+1].cells[j].innerHTML!=" " && v.rows[i].cells[j+1].innerHTML!=" " ){
 		k=k+1;
 	    console.log("k = ", k);
 	}
        }
 
 	}
-	if(k==4){
+	if(k==9){
 		console.log("GAME OVER");
 	}
 	
