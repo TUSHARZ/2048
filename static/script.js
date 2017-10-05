@@ -18,7 +18,7 @@ if(v.rows[randii].cells[randjj].innerHTML==" ")  {
 else{
 	assign();
 
-}
+}//switching colors
 	for(var i=0 ; i<=3 ; i++){
 		for(var j=0 ; j<=3 ; j++){
 			
@@ -74,7 +74,7 @@ var seperate = function(i){
 	console.log("given = ",i );
 	return myrand;
 }
-
+//called first
 
 function startthis(){
 	var v = document.querySelector("#table");
