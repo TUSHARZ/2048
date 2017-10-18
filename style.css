@@ -41,11 +41,6 @@
 	margin-bottom: 15px;
 	font-weight: bold;
 }
-#game-status{
-	display: inline-flex;
-    align-items: center;
-    margin-right: 100px;
-}
 #score{
     font-size: 33px;
     text-align: center;
