@@ -282,9 +282,5 @@ var showGameOver = function() {
 	document.getElementById("show-game-over").style.display = "block";
 }
 
-var hideGameOver = function() {
-	document.getElementById("show-game-over").style.display = "none";
-}
-
 // set onload event listenter to the startthis function
 window.addEventListener('load' , startthis);
