@@ -1,60 +1,59 @@
-#table td{
-	height: 130px;
-	width: 130px;
-    font-size:40px;
+body {
+    background-color: #eeeeee;
+}
+
+#table td {
+    height: 130px;
+    width: 100px;
+    font-size: 40px;
     text-align: center;
-	padding: 10px;
-	border: 8px solid grey;
-	
+    padding: 10px;
+    border: 2px solid #eeeeee;
 
 }
 
 #table tr {
-	margin: 0px;
-	padding: 10px;
-	font-size:40px;
+    margin: 0px;
+    padding: 10px;
+    font-size: 40px;
     text-align: center;
-	border: 8px solid grey;
-	
+
 }
 
 #table {
-	
-	border-radius: 20px;
-	font: 20px;
-	background: #CDC1B4;
-}
-#first{
-border-top-left-radius: 10px;
+    background-color: #dddddd;
+    border: 8px solid #eeeeee;
 }
 
-#back{
-	    width: 200px;
-    height: 100px;
-    margin: 10;
+#keys .k {
+    height: 50px;
+    font-size: 30px;
     text-align: center;
-    border-radius: 10px;
-        border: 5px solid grey;
-        background: #BBADA0
-}
-#back2{
-	    width: 150px;
-    height: 70px;
-    margin: 10;
-    text-align: center;
-    border-radius: 10px;
-        border: 5px solid grey;
-        background: #BBADA0
+    padding: 10px;
 }
 
-#keys .k{
-	height: 50px;
-	
-    font-size:30px;
-    text-align: center;
-	padding: 10px;
-	border: 8px solid grey;
-
-
+#container {
+    display: inline-flex;
+    align-items: center;
 }
 
+#score {
+    font-size: 100px;
+    font-style: italic;
+    margin-right: 30px;
+}
+
+#reload {
+    text-align: justify;
+    padding-top: 30px;
+    font-size: 30px;
+    border:0px solid grey;
+    border-left-width:8px;
+    cursor: pointer;
+}
+
+#score, #reload {
+    color: grey;
+    padding:10px;
+    font-family: sans-serif;
+}
