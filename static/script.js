@@ -2,15 +2,11 @@ var getrandom = function()
 {
 	return Math.floor(Math.random()*(3-0+1)+0);
 }
-
-
-
-
-
+//assignment function
 var assign = function(){
 	
-		var v = document.querySelector("#table");
-	var randii=getrandom();
+var v = document.querySelector("#table");
+var randii=getrandom();
 var randjj=getrandom();
 if(v.rows[randii].cells[randjj].innerHTML==" ")  {
 	v.rows[randii].cells[randjj].innerHTML="2";
@@ -18,7 +14,8 @@ if(v.rows[randii].cells[randjj].innerHTML==" ")  {
 else{
 	assign();
 
-}//switching colors
+}
+	//switching colors
 	for(var i=0 ; i<=3 ; i++){
 		for(var j=0 ; j<=3 ; j++){
 			
@@ -37,16 +34,10 @@ else{
                  case "32":v.rows[i].cells[j].style.backgroundColor="#F67C5F"
                  break;
                  case "64":v.rows[i].cells[j].style.backgroundColor="#F65E3B"
-                 break
+                 break;
                  default:
                  v.rows[i].cells[j].style.backgroundColor="#CDC1B4"
-                 
-
-
-
-
-} 
-				
+} 	
 			}
 			else
 			{
@@ -54,9 +45,6 @@ else{
 			}
 		}
 	}
-
-	
-
 }
 var newg=function(){
 	console.log("in");
@@ -67,8 +55,6 @@ var seperate = function(i){
 	myrand=getrandom();
 	if(myrand==i){
 		seperate();
-		
-
 	}
 	console.log("myrand = ",myrand );
 	console.log("given = ",i );
@@ -150,16 +136,10 @@ console.log("this, innerHTML = ", this.innerHTML);
 for(var l=3 ; l>=0 ; l--){  //Just did some work with replacing random variable on only a blank space and down is almost complete..
 	for(var k=3 ; k>=0 ; k--){
 		if(v.rows[l].cells[k].innerHTML!=" "){
-         
-        
 		movedown(l,k,v,s);
-		
-
-
 	}}
 
 }
-
 
 assign(v);
  }
@@ -181,20 +161,13 @@ for(var l=0 ; l<=3 ; l++){  //Just did some work with replacing random variable 
 }
 
 assign(v);
-
-
 	}
-
-
-
 
 if(event.keyCode == 39 || k==="right"){
 	console.log("in right");
 	for(var l=3 ; l>=0 ; l--){  //Just did some work with replacing random variable on only a blank space and down is almost complete..
 	for(var k=3 ; k>=0 ; k--){
 		if(v.rows[l].cells[k].innerHTML!=" "){
-         
-
 		moveright(l,k,v,s);
 
 
@@ -349,16 +322,9 @@ var gameover=function(){
 
 	}
 	if(k==9){
-		console.log("GAME OVER");
+		console.log("GAME OVER!!");
 	}
 	
 }
-
-
-
-
-
-
-
 
 window.addEventListener('load' , startthis);
