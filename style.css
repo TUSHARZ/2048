@@ -1,60 +1,48 @@
-#table td{
-	height: 130px;
-	width: 130px;
-    font-size:40px;
+#table td {
+    height: 130px;
+    width: 130px;
+    font-size: 40px;
     text-align: center;
-	padding: 10px;
-	border: 8px solid grey;
-	
-
+    padding: 10px;
+    border: 8px solid grey;
 }
-
 #table tr {
-	margin: 0px;
-	padding: 10px;
-	font-size:40px;
+    margin: 0px;
+    padding: 10px;
+    font-size: 40px;
     text-align: center;
-	border: 8px solid grey;
-	
+    border: 8px solid grey;
 }
-
 #table {
-	
-	border-radius: 20px;
-	font: 20px;
-	background: #CDC1B4;
+    border-radius: 20px;
+    font: 20px;
+    background: #CDC1B4;
 }
-#first{
-border-top-left-radius: 10px;
+#first {
+    border-top-left-radius: 10px;
 }
-
-#back{
-	    width: 200px;
+#back {
+    width: 200px;
     height: 100px;
     margin: 10;
     text-align: center;
     border-radius: 10px;
-        border: 5px solid grey;
-        background: #BBADA0
+    border: 5px solid grey;
+    background: #BBADA0
 }
-#back2{
-	    width: 150px;
+#back2 {
+    width: 150px;
     height: 70px;
     margin: 10;
     text-align: center;
     border-radius: 10px;
-        border: 5px solid grey;
-        background: #BBADA0
+    border: 5px solid grey;
+    background: #BBADA0
 }
-
-#keys .k{
-	height: 50px;
-	
-    font-size:30px;
+#keys .k {
+    height: 50px;
+    font-size: 30px;
     text-align: center;
-	padding: 10px;
-	border: 8px solid grey;
-
-
+    padding: 10px;
+    border: 8px solid grey;
 }
-
