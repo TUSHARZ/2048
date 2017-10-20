@@ -1,150 +1,77 @@
 <html>
-
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css">
-  <script type="text/javascript" src="static/script.js"></script>
-
+    <title>2048</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="static/script.js"></script>
 </head>
 
 <body background="static/background.png">
-
-<div style="text-align: -webkit-center;  ">
-<p style="font-size: 50px;color: grey ; padding: 10px ; ; margin-bottom: 15px">
-
-2048
-
-
-</p>
-<div style="    display: inline-flex;
-    align-items: center;
-    margin-right: 100px">
-<div id="back">
-<p id="score" style="        font-size: 33px;
-    text-align: center;
-    color: white;
-    font-family: sans-serif;
-     ">
-Score Board
-
-</p>
-
-</div>
-<div id="back2" >
-<p id="reload" style="        font-size: 20px;
-    text-align: center;
-    color: white;
-    cursor: pointer;
-    font-family: sans-serif;
-     ">
-New Game
-</p>
-
-</div>
-
-
-
-</div>
-</div>
-<div style="    display: flex;
-    align-items: center;
-    /* margin-left: 307px; */
-    justify-content: center;">
-<div style="    padding: 18px;">
-<table id="table" cellspacing="0">
-<tr>
-<td style="border-top-left-radius: 20px">   </td>
-<td >   </td>
-<td>    </td>
-<td style="border-top-right-radius: 20px">   </td>
-
-</tr>
-
-<tr>
-<td>   </td>
-<td>   </td>
-<td>   </td>
-<td>   </td>
-</tr>
-
-<tr>
-<td>   </td>
-<td>   </td>
-<td>   </td>
-<td>   </td>
-</tr>
-
-
-
-<tr>
-<td style="border-bottom-left-radius: 20px">   </td>
-<td>   </td>
-<td>   </td>
-<td style="border-bottom-right-radius: 20px">   </td>
-</tr>
-
-
-
-
-
-</table>
-
-</div>
-
-<div style="    padding: 30px;">
-<table id="keys" >
-    <tr> 
-    <td> </td>
-    <td id="up" class="k"><img style="width: 40px;
-    height: 40px;" src="static/uparrow.png"> </td>
-    <td></td>
-
-
-    </tr>
-     <tr> 
-    <td id="left" class="k"><img style="width: 40px;
-    height: 40px;" src="static/leftarrow.png"></td>
-    <td></td>
-    <td id="right" class="k"><img style="width: 40px;
-    height: 40px;" src="static/rightarrow.png"></td>
-
-
-    </tr>
-     <tr> 
-    <td></td>
-    <td id="down" class="k"><img style="width: 40px;
-    height: 40px;" src="static/downarrow.png"></td>
-    <td></td>
-
-
-    </tr>
-    
-
-
-
-
-
-</table>
-
-</div>
-
-</div>
-<div style="display: flex ; justify-content: center;">
-<p style="font-size: 25px;
-   
-    text-align: end;
-    color: gray;
-    font-family: sans-serif;
-    padding: 10px;"> Made By : Tushar Gupta<br>Get Code at : <a href="https://www.github.com/TUSHARZ/2048"> Github </a>
-</p>
-
-
-
-
+    <div id = "header">
+        <p id = "title">
+            2048
+        </p>
+    </div>
+    <div id = "game">
+        <div id = "gameboard">
+            <table id="table" cellspacing="0">
+                <tr>
+                    <td id = "top-left-corner"></td>
+                    <td></td>
+                    <td></td>
+                    <td id = "top-right-corner"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td id = "bottom-left-corner"></td>
+                    <td></td>
+                    <td></td>
+                    <td id = "bottom-right-corner"></td>
+                </tr>
+            </table>
+        </div>
+        <div id="controls">
+            <div id="back" class = "status-box" >
+                <p id="score">
+                Score Board
+                </p>
+            </div>
+            <table id="keys" >
+                <tr> 
+                    <td> </td>
+                    <td id="up" class="k"><img class = "arrow" src="static/uparrow.png"> </td>
+                    <td></td>
+                </tr>
+                <tr> 
+                    <td id="left" class="k"><img class = "arrow" src="static/leftarrow.png"></td>
+                    <td></td>
+                    <td id="right" class="k"><img class = "arrow" src="static/rightarrow.png"></td>
+                </tr>
+                <tr> 
+                    <td></td>
+                    <td id="down" class="k"><img class = "arrow" src="static/downarrow.png"></td>
+                    <td></td>
+                </tr>
+            </table>
+            <div id="back2" class = "status-box" >
+                <p id="reload">
+                New Game
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id = "footer">
+        <p id = "footer-text">Made By : Tushar Gupta<br>Get Code at : <a href="https://www.github.com/TUSHARZ/2048"> Github </a></p>
+    </div>
 </body>
-
-
-
-
-
-
 </html>
