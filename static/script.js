@@ -266,16 +266,30 @@ var moveleft = function(i , j , v,s){
 var isGameOver = function(){
 	// get all the cells
 	var cells = document.querySelectorAll("#table td");
-	// default to game over
-	var gameover = true;
 	// run through all the cells
 	for(var i = 0; i < cells.length; i++){
 		cell = cells[i]; // get the specific cell
 		if (cell.innerText === "") { // check if the cell is blank
-			gameover = false; // if there is an empty cell there is still a move left, so the game is not over
+			return false; // blank cell means that the game is not over
+		}
+		// check cell on top
+		else if ( i > 3 && cells[i - 4].innerText === cell.innerText ) { // all cells less then 4 are on the first row and do not have a row above them
+			return false; // cell on top (index - 4) is the same then they can be merged so game is not over
+		}
+		// check cell on bottom
+		else if ( i < 12 && cells[i + 4].innerText === cell.innerText ) { // all indexes above 11 are on the bottom row with no row below them
+			return false; // cell on bottom is the same (index + 4) then they can be merged and the game is not over
+		}
+		// check cell on left
+		else if ( ( i != 0 && i != 4 && i == 8 && i == 12) && cells[i - 1].innerText === cell.innerText) { // index 0, 4, 8 and 12 are on the left edge so do not run this check if that is the index
+			return false; // cell on the left is the same then they can be merged and game is not over
+		}
+		// check cell on right
+		else if ( (i != 3 && i != 7 && i != 11 && i != 15) && cells[i + 1].innerText === cell.innerText ) { // index 3, 7, 11 and 15 are on the right edge so if it is one of thouse do not run this check 
+			return false; // cell on the right is the same so they can be merged and the game is not over
 		}
 	}
-	return gameover;
+	return true;
 }
 
 var showGameOver = function() {
