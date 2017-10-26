@@ -28,18 +28,28 @@ else{
                  switch(mycolor){
                  case "2": v.rows[i].cells[j].style.backgroundColor="#EEE4DA";
                        break;
-                 case "4":v.rows[i].cells[j].style.backgroundColor="#EDE0C8"
+                 case "4":v.rows[i].cells[j].style.backgroundColor="#EDE0C8";
                  break;
-                 case "8":v.rows[i].cells[j].style.backgroundColor="#F2B179"
+                 case "8":v.rows[i].cells[j].style.backgroundColor="#F2B179";
                  break;
-                 case "16":v.rows[i].cells[j].style.backgroundColor="#F59563"
+                 case "16":v.rows[i].cells[j].style.backgroundColor="#F59563";
                  break;
-                 case "32":v.rows[i].cells[j].style.backgroundColor="#F67C5F"
+                 case "32":v.rows[i].cells[j].style.backgroundColor="#F67C5F";
                  break;
-                 case "64":v.rows[i].cells[j].style.backgroundColor="#F65E3B"
-                 break
+                 case "64":v.rows[i].cells[j].style.backgroundColor="#F65E3B";
+                 break;
+		 case "128":v.rows[i].cells[j].style.backgroundColor="#EDCF72";
+                 break;
+		 case "256":v.rows[i].cells[j].style.backgroundColor="#EDCC61";
+                 break;
+		 case "512":v.rows[i].cells[j].style.backgroundColor="#EDC850";
+                 break;
+		 case "1024":v.rows[i].cells[j].style.backgroundColor="#EDC470";
+                 break;
+		 case "2048":v.rows[i].cells[j].style.backgroundColor="#EDA157";
+                 break;
                  default:
-                 v.rows[i].cells[j].style.backgroundColor="#CDC1B4"
+                 v.rows[i].cells[j].style.backgroundColor="#CDC1B4";
                  
 
 
